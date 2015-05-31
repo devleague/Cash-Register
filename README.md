@@ -13,6 +13,7 @@ Create an html5 single page app that looks like a cash register with these butto
 [4] [5]  [6]   [×]  [get balance]
 [1] [2]  [3]   [-]  [deposit cash]
 [0] [00] [.]   [+]  [withdraw cash]
+               [=]
 
 ```
 
