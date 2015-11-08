@@ -110,53 +110,36 @@ var press = {
 9. Display output.
 */
 
-
+/* Refactoring
+1. Function for if-statement tree that forces last operation before next operation.
+2. "Press" object (?)
+3. "Keys" object (?)
+4. Use modules
+*/
+function lastOpCheck(num, keys) {
+  if (calculator.lastOperator === "add") {
+    calculator.add(parseFloat(keys));
+  } else if (calculator.lastOperator === "subtract") {
+    calculator.subtract(parseFloat(keys));
+  } else if (calculator.lastOperator === "multiply") {
+    calculator.multiply(parseFloat(keys));
+  } else if (calculator.lastOperator === "divide") {
+    calculator.divide(parseFloat(keys));
+  } else {
+    console.log("You broke the damn calculator.");
+  }
+}
 
 var operations = {
   equalsButton: document.getElementById("keyEquals").addEventListener("click", function() {
-      if (calculator.lastOperator === "add") {
-        console.log(display.innerHTML);
-        calculator.add(parseFloat(keys.display.innerHTML));
-      } else if (calculator.lastOperator === "subtract") {
-        console.log(display.innerHTML);
-        calculator.subtract(parseFloat(keys.display.innerHTML));
-      } else if (calculator.lastOperator === "multiply") {
-        console.log(display.innerHTML);
-        calculator.multiply(parseFloat(keys.display.innerHTML));
-        console.log(calculator.total);
-      } else if (calculator.lastOperator === "divide") {
-        console.log(display.innerHTML);
-        calculator.divide(parseFloat(keys.display.innerHTML));
-        console.log(calculator.total);
-      } else {
-        console.log("You broke the damn calculator.");
-      }
-      console.log("=========");
-      console.log(calculator.total);
+      lastOpCheck(display.innerHTML, keys.display.innerHTML);
       calculator.lastOperator = "";
       display.innerHTML = calculator.total;
     }),
 
   addButton: document.getElementById("keyAdd").addEventListener("click", function() {
-      console.log(parseFloat(keys.display.innerHTML));
       if (calculator.lastOperator.length > 0) {
-        if (calculator.lastOperator === "add") {
-          console.log(display.innerHTML);
-          calculator.add(parseFloat(keys.display.innerHTML));
-        } else if (calculator.lastOperator === "subtract") {
-          console.log(display.innerHTML);
-          calculator.subtract(parseFloat(keys.display.innerHTML));
-        } else if (calculator.lastOperator === "multiply") {
-          console.log(display.innerHTML);
-          calculator.multiply(parseFloat(keys.display.innerHTML));
-          console.log(calculator.total);
-        } else if (calculator.lastOperator === "divide") {
-          console.log(display.innerHTML);
-          calculator.divide(parseFloat(keys.display.innerHTML));
-          console.log(calculator.total);
-        } else {
-          console.log("You broke the damn calculator.");
-        }
+        lastOpCheck(display.innerHTML, keys.display.innerHTML);
       } else {
         if (calculator.total !== null) {
           calculator.total += parseFloat(keys.display.innerHTML);
@@ -169,25 +152,8 @@ var operations = {
     }),
 
   subtractButton: document.getElementById("keySubtract").addEventListener("click", function() {
-      console.log(parseFloat(keys.display.innerHTML));
       if (calculator.lastOperator.length > 0) {
-        if (calculator.lastOperator === "add") {
-          console.log(display.innerHTML);
-          calculator.add(parseFloat(keys.display.innerHTML));
-        } else if (calculator.lastOperator === "subtract") {
-          console.log(display.innerHTML);
-          calculator.subtract(parseFloat(keys.display.innerHTML));
-        } else if (calculator.lastOperator === "multiply") {
-          console.log(display.innerHTML);
-          calculator.multiply(parseFloat(keys.display.innerHTML));
-          console.log(calculator.total);
-        } else if (calculator.lastOperator === "divide") {
-          console.log(display.innerHTML);
-          calculator.divide(parseFloat(keys.display.innerHTML));
-          console.log(calculator.total);
-        } else {
-          console.log("You broke the damn calculator.");
-        }
+        lastOpCheck(display.innerHTML, keys.display.innerHTML);
       } else {
         if (calculator.total !== null) {
           calculator.total -= parseFloat(keys.display.innerHTML);
@@ -200,34 +166,13 @@ var operations = {
     }),
 
   multiplyButton: document.getElementById("keyMultiply").addEventListener("click", function() {
-      console.log(parseFloat(keys.display.innerHTML));
       if (calculator.lastOperator.length > 0) {
-        if (calculator.lastOperator === "add") {
-          console.log(display.innerHTML);
-          calculator.add(parseFloat(keys.display.innerHTML));
-        } else if (calculator.lastOperator === "subtract") {
-          console.log(display.innerHTML);
-          calculator.subtract(parseFloat(keys.display.innerHTML));
-        } else if (calculator.lastOperator === "multiply") {
-          console.log(display.innerHTML);
-          calculator.multiply(parseFloat(keys.display.innerHTML));
-          console.log(calculator.total);
-        } else if (calculator.lastOperator === "divide") {
-          console.log(display.innerHTML);
-          calculator.divide(parseFloat(keys.display.innerHTML));
-          console.log(calculator.total);
-        } else {
-          console.log("You broke the damn calculator.");
-        }
+        lastOpCheck(display.innerHTML, keys.display.innerHTML);
       } else {
           if (calculator.total !== null) {
-          console.log("total was not null, so multiplied");
           calculator.total *= parseFloat(keys.display.innerHTML);
-          console.log(calculator.total);
         } else {
-          console.log("total was null, can't multiply by zero, so made entry equal total");
           calculator.total = parseFloat(keys.display.innerHTML);
-          console.log(calculator.total);
         }
       }
       calculator.lastOperator = "multiply";
@@ -235,34 +180,13 @@ var operations = {
     }),
 
   divideButton: document.getElementById("keyDivide").addEventListener("click", function() {
-      console.log(parseFloat(keys.display.innerHTML));
       if (calculator.lastOperator.length > 0) {
-        if (calculator.lastOperator === "add") {
-          console.log(display.innerHTML);
-          calculator.add(parseFloat(keys.display.innerHTML));
-        } else if (calculator.lastOperator === "subtract") {
-          console.log(display.innerHTML);
-          calculator.subtract(parseFloat(keys.display.innerHTML));
-        } else if (calculator.lastOperator === "multiply") {
-          console.log(display.innerHTML);
-          calculator.multiply(parseFloat(keys.display.innerHTML));
-          console.log(calculator.total);
-        } else if (calculator.lastOperator === "divide") {
-          console.log(display.innerHTML);
-          calculator.divide(parseFloat(keys.display.innerHTML));
-          console.log(calculator.total);
-        } else {
-          console.log("You broke the damn calculator.");
-        }
+        lastOpCheck(display.innerHTML, keys.display.innerHTML);
       } else {
         if (calculator.total !== null) {
-          console.log("total was not null, so divided");
           calculator.total /= parseFloat(keys.display.innerHTML);
-          console.log(calculator.total);
         } else {
-          console.log("dividing....");
           calculator.total = parseFloat(keys.display.innerHTML);
-          console.log(calculator.total);
         }
       }
       calculator.lastOperator = "divide";
