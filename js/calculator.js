@@ -1,11 +1,16 @@
 console.log("Test calculator");
 
 var calculator = {
-  total: 0,
+  total: null,
 
-  clear: function() {this.total = 0;},
+  lastOperator: "",
 
-  add: function(num) {return this.total += num;},
+  clear: function() {this.total = null;},
+
+  add: function(num) {
+
+    return this.total += num;
+  },
 
   subtract: function(num) {return this.total -= num;},
 
@@ -18,3 +23,4 @@ var calculator = {
 
   equals: function() { return this.total ;} //push this.total to register.display
 };
+
