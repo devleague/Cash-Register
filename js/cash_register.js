@@ -8,38 +8,44 @@ var register = {
   display: 0,
 
   getBalance: function() {
-    //push 'balance' to 'display'
-    return this.balance;
-    // this.display = this.balance;
-    // return this.display;
-  },
-
-  depositCash: function(num) {
-    this.balance += num;
-    // this.display = null;
     return this.balance;
   },
 
-  withdrawCash: function(num) {
-    this.balance -= num;
-    // this.display = null;
-    return this.balance;
+  depositCash: function() {
+    this.balance += parseFloat(display.innerHTML);
+    display.innerHTML = "";
+    console.log(this.balance);
+  },
+
+  withdrawCash: function() {
+    if (parseFloat(display.innerHTML) > this.balance) {
+      display.innerHTML = "ERROR: INSUFFICIENT FUNDS";
+      console.log("You is broke.");
+    } else {
+      this.balance -= parseFloat(display.innerHTML);
+      display.innerHTML = "";
+      console.log(this.balance);
+    }
   }
 };
 
 document.getElementById("keyGetBalance").addEventListener("click", function(){
+  register.getBalance();
   console.log("This is your balance.");
   console.log(register.getBalance());
+  console.log(register.balance);
 });
 
 document.getElementById("keyDepositCash").addEventListener("click", function(){
+  register.depositCash();
   console.log("This is how much you deposited.");
-  console.log(register.depositCash());
+  console.log(register.balance);
 });
 
 document.getElementById("keyWithdrawCash").addEventListener("click", function(){
+  register.withdrawCash();
   console.log("This is your balance.");
-  console.log(register.withdrawCash());
+  console.log(register.balance);
 });
 
 var keys = {
@@ -263,28 +269,3 @@ var operations = {
       display.innerHTML = "";
     }),
 };
-
-
-
-
-
-// var subtractButton = document.getElementById("keySubtract");
-
-// subtractButton.addEventListener("click", function(){
-//   calculator.subtract();
-//   console.log(calculator.subtract());
-// });
-
-// var mulitplyButton = document.getElementById("keyMultiply");
-
-// mulitplyButton.addEventListener("click", function(){
-//   calculator.mulitply();
-//   console.log(calculator.mulitply());
-// });
-
-// var divideButton = document.getElementById("keyDivide");
-
-// divideButton.addEventListener("click", function(){
-//   calculator.divide();
-//   console.log(calculator.divide());
-// });
