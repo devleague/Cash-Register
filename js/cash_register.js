@@ -1,6 +1,3 @@
-// var calculatorModule = require('./calculator.js');
-console.log("Test register");
-
 var register = {
 
   balance: 0,

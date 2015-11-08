@@ -1,5 +1,3 @@
-console.log("Test calculator");
-
 var calculator = {
   total: null,
 
