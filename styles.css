@@ -1,0 +1,9 @@
+p {
+  display: table-cell;
+  padding: 15px;
+  font-size: 200%;
+}
+
+.row {
+  display: table-row;
+}
