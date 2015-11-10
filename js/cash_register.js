@@ -99,6 +99,7 @@ var press = {
     display.innerHTML = '';
     calculator.total = null;
     calculator.lastOperator = [];
+    document.getElementById("opAlert").innerHTML = "Calculating with chained operations.";
     // import chainoperations.js module
 
 
@@ -108,6 +109,7 @@ var press = {
     display.innerHTML = '';
     calculator.total = null;
     calculator.lastOperator = [];
+    document.getElementById("opAlert").innerHTML = "Calculating with ordered operations.";
     // import orderedoperations.js module
 
 
