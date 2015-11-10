@@ -1,14 +1,13 @@
 var calculator = {
   total: null,
 
-  lastOperator: "",
+  lastOperator: [],
+
+  numStr: '',
 
   clear: function() {this.total = null;},
 
-  add: function(num) {
-
-    return this.total += num;
-  },
+  add: function(num) {return this.total += num;},
 
   subtract: function(num) {return this.total -= num;},
 

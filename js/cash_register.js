@@ -63,7 +63,6 @@ var keys = {
 
 };
 
-
 var press = {
   press1: keys.key1.addEventListener('click', function() {
     display.innerHTML += 1;}),
@@ -91,102 +90,89 @@ var press = {
   pressClear: keys.keyClear.addEventListener('click', function() {
     display.innerHTML = '';
     calculator.total = null;
-    calculator.lastOperator = '';
+    calculator.lastOperator = [];
   })
 };
 
-/* Calculation Steps
-1. Enter a number.
-2. Click an operator.
-3. Move displayed number to "total".
-4. Clear display.
-5. Enter a second number.
-6. Click operator.
-7. Apply first operator.
-8. Set output to "total".
-9. Display output.
-*/
-
-/* Refactoring
-1. Function for if-statement tree that forces last operation before next operation.
-2. "Press" object (?)
-3. "Keys" object (?)
-4. Use modules
-*/
-function lastOpCheck(num, keys) {
-  if (calculator.lastOperator === "add") {
+// This function should be added to the chainoperations.js module
+function lastOpCheck(keys) {
+  if (calculator.lastOperator[0] === "add") {
     calculator.add(parseFloat(keys));
-  } else if (calculator.lastOperator === "subtract") {
+  } else if (calculator.lastOperator[0] === "subtract") {
     calculator.subtract(parseFloat(keys));
-  } else if (calculator.lastOperator === "multiply") {
+  } else if (calculator.lastOperator[0] === "multiply") {
     calculator.multiply(parseFloat(keys));
-  } else if (calculator.lastOperator === "divide") {
+  } else if (calculator.lastOperator[0] === "divide") {
     calculator.divide(parseFloat(keys));
   } else {
     console.log("You broke the damn calculator.");
   }
 }
 
+// Order Of Operations
+
 var operations = {
   equalsButton: document.getElementById("keyEquals").addEventListener("click", function() {
-      lastOpCheck(display.innerHTML, keys.display.innerHTML);
-      calculator.lastOperator = "";
-      display.innerHTML = calculator.total;
+      calculator.lastOperator.push(parseFloat(keys.display.innerHTML));
+      console.log(calculator.lastOperator);
+
+      // these loops should be refactored
+      for (var i = 0; i < calculator.lastOperator.length; i++) {
+        while (calculator.lastOperator[i] === "*") {
+          num = calculator.lastOperator[i-1] * calculator.lastOperator[i+1];
+          calculator.lastOperator.splice(i-1, 3, num);
+          console.log(calculator.lastOperator);
+        }
+      }
+      for (var k = 0; k < calculator.lastOperator.length; k++) {
+        while (calculator.lastOperator[k] === "/") {
+          num = calculator.lastOperator[k-1] / calculator.lastOperator[k+1];
+          calculator.lastOperator.splice(k-1, 3, num);
+          console.log(calculator.lastOperator);
+        }
+      }
+      for (var m = 0; m < calculator.lastOperator.length; m++) {
+        while (calculator.lastOperator[m] === "+") {
+          num = calculator.lastOperator[m-1] + calculator.lastOperator[m+1];
+          calculator.lastOperator.splice(m-1, 3, num);
+          console.log(calculator.lastOperator);
+        }
+      }
+      for (var p = 0; p < calculator.lastOperator.length; p++) {
+        while (calculator.lastOperator[p] === "-") {
+          num = calculator.lastOperator[p-1] - calculator.lastOperator[p+1];
+          calculator.lastOperator.splice(p-1, 3, num);
+          console.log(calculator.lastOperator);
+        }
+      }
+      console.log(calculator.lastOperator[0]);
+      display.innerHTML = calculator.lastOperator[0].toFixed(3);
+      calculator.lastOperator = [];
     }),
 
   addButton: document.getElementById("keyAdd").addEventListener("click", function() {
-      if (calculator.lastOperator.length > 0) {
-        lastOpCheck(display.innerHTML, keys.display.innerHTML);
-      } else {
-        if (calculator.total !== null) {
-          calculator.total += parseFloat(keys.display.innerHTML);
-        } else {
-          calculator.total = parseFloat(keys.display.innerHTML);
-        }
-      }
-      calculator.lastOperator = "add";
+      calculator.lastOperator.push(parseFloat(keys.display.innerHTML));
+      calculator.lastOperator.push('+');
+      console.log(calculator.lastOperator);
       display.innerHTML = "";
     }),
 
   subtractButton: document.getElementById("keySubtract").addEventListener("click", function() {
-      if (calculator.lastOperator.length > 0) {
-        lastOpCheck(display.innerHTML, keys.display.innerHTML);
-      } else {
-        if (calculator.total !== null) {
-          calculator.total -= parseFloat(keys.display.innerHTML);
-        } else {
-          calculator.total = parseFloat(keys.display.innerHTML);
-        }
-      }
-      calculator.lastOperator = "subtract";
+      calculator.lastOperator.push(parseFloat(keys.display.innerHTML));
+      calculator.lastOperator.push('-');
       display.innerHTML = "";
     }),
 
   multiplyButton: document.getElementById("keyMultiply").addEventListener("click", function() {
-      if (calculator.lastOperator.length > 0) {
-        lastOpCheck(display.innerHTML, keys.display.innerHTML);
-      } else {
-          if (calculator.total !== null) {
-          calculator.total *= parseFloat(keys.display.innerHTML);
-        } else {
-          calculator.total = parseFloat(keys.display.innerHTML);
-        }
-      }
-      calculator.lastOperator = "multiply";
+      calculator.lastOperator.push(parseFloat(keys.display.innerHTML));
+      calculator.lastOperator.push('*');
+      console.log(calculator.lastOperator);
       display.innerHTML = "";
     }),
 
   divideButton: document.getElementById("keyDivide").addEventListener("click", function() {
-      if (calculator.lastOperator.length > 0) {
-        lastOpCheck(display.innerHTML, keys.display.innerHTML);
-      } else {
-        if (calculator.total !== null) {
-          calculator.total /= parseFloat(keys.display.innerHTML);
-        } else {
-          calculator.total = parseFloat(keys.display.innerHTML);
-        }
-      }
-      calculator.lastOperator = "divide";
+      calculator.lastOperator.push(parseFloat(keys.display.innerHTML));
+      calculator.lastOperator.push('/');
       display.innerHTML = "";
     }),
 };
