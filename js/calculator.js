@@ -3,8 +3,6 @@ var calculator = {
 
   lastOperator: [],
 
-  numStr: '',
-
   clear: function() {this.total = null;},
 
   add: function(num) {return this.total += num;},

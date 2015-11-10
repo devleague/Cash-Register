@@ -60,6 +60,8 @@ var keys = {
   key00: document.getElementById("key00"),
   keyPeriod: document.getElementById("keyPeriod"),
   keyClear: document.getElementById("keyClear"),
+  chained: document.getElementById("chained"),
+  ordered: document.getElementById("ordered")
 
 };
 
@@ -91,6 +93,24 @@ var press = {
     display.innerHTML = '';
     calculator.total = null;
     calculator.lastOperator = [];
+  }),
+  pressChained: keys.chained.addEventListener('click', function() {
+    // starts with same functionality as clear
+    display.innerHTML = '';
+    calculator.total = null;
+    calculator.lastOperator = [];
+    // import chainoperations.js module
+
+
+  }),
+  pressOrdered: keys.ordered.addEventListener('click', function() {
+    // starts with same functionality as clear
+    display.innerHTML = '';
+    calculator.total = null;
+    calculator.lastOperator = [];
+    // import orderedoperations.js module
+
+
   })
 };
 
