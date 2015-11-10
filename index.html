@@ -8,58 +8,58 @@
   <body>
     <section>
   <!-- insert display -->
-      <div style="padding: 15px; font-size: 200%; display: inline-block"><u>Super Happy Fun Register</u>: $[</div>
-      <div id="display" style="padding: 5px; font-size: 200%; display: inline-block"></div>
-      <div style="padding: 15px; font-size: 200%; display: inline-block">]</div>
+      <div class="top" style="padding: 15px; font-size: 200%; display: inline-block"><u>Super Happy Fun Register</u>: $[</div>
+      <div class="top" id="display" style="padding: 15px; font-size: 200%; display: inline-block"></div>
+      <div class="top" style="padding: 15px; font-size: 200%; display: inline-block">]</div>
 
       <br>
 
       <div>
-        <p id="opAlert" style="color: blue; font-size: 125%">Calculating with ordered operations.</p>
+        <p id="opAlert" style="color: blue; font-size: 125%">Calculating with <b>ordered</b> operations.</p>
       </div>
 
       <!-- insert 789 divide clear -->
       <div class="row">
-        <p id="key7">[7]</p>
-        <p id="key8">[8]</p>
-        <p id="key9">[9]</p>
-        <p id="keyDivide">[÷]</p>
-        <p id="keyClear">[clear]</p>
+        <p class="cell" id="key7">[7]</p>
+        <p class="cell" id="key8">[8]</p>
+        <p class="cell" id="key9">[9]</p>
+        <p class="cell" id="keyDivide">[÷]</p>
+        <p class="register" id="keyClear">[clear]</p>
       </div>
 
   <!-- insert 456 times getBalance -->
       <div class="row">
-        <p id="key4">[4]</p>
-        <p id="key5">[5]</p>
-        <p id="key6">[6]</p>
-        <p id="keyMultiply">[&times;]</p>
-        <p id="keyGetBalance">[get balance]</p>
+        <p class="cell" id="key4">[4]</p>
+        <p class="cell" id="key5">[5]</p>
+        <p class="cell" id="key6">[6]</p>
+        <p class="cell" id="keyMultiply">[&times;]</p>
+        <p class="register" id="keyGetBalance">[get balance]</p>
       </div>
 
       <!-- insert 123 minus depositeCash -->
       <div class="row">
-        <p id="key1">[1]</p>
-        <p id="key2">[2]</p>
-        <p id="key3">[3]</p>
-        <p id="keySubtract">[-]</p>
-        <p id="keyDepositCash">[deposit cash]</p>
+        <p class="cell" id="key1">[1]</p>
+        <p class="cell" id="key2">[2]</p>
+        <p class="cell" id="key3">[3]</p>
+        <p class="cell" id="keySubtract">[-]</p>
+        <p class="register" id="keyDepositCash">[deposit cash]</p>
       </div>
 
       <!-- insert 0 00 . plus withdrawCash -->
       <div class="row">
-        <p id="key0">[0]</p>
-        <p id="key00">[00]</p>
-        <p id="keyPeriod">[.]</p>
-        <p id="keyAdd">[+]</p>
-        <p id="keyWithdrawCash">[withdraw cash]</p>
+        <p class="cell" id="key0">[0]</p>
+        <p class="cell" id="key00">[00]</p>
+        <p class="cell" id="keyPeriod">[.]</p>
+        <p class="cell" id="keyAdd">[+]</p>
+        <p class="register" id="keyWithdrawCash">[withdraw cash]</p>
       </div>
 
       <!-- insert equals -->
       <div class="row">
-        <p></p>
-        <p></p>
-        <p></p>
-        <p id="keyEquals">[=]</p>
+        <p class="cell"></p>
+        <p class="cell"></p>
+        <p class="cell"></p>
+        <p class="cell" id="keyEquals">[=]</p>
       </div>
 
       <div style="display: inline-block">

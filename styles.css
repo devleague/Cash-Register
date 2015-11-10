@@ -7,3 +7,32 @@ p {
 .row {
   display: table-row;
 }
+
+.cell {
+  background-color: #C3EAF7;
+
+}
+
+.cell:hover {
+  background-color: #A3E2F7;
+}
+
+.cell:active {
+  background-color: #4AAECF;
+}
+
+.register {
+  background-color: #F7C3C9;
+}
+
+.register:hover {
+  background-color: #EB7885;
+}
+
+.register:active {
+  background-color: #E8384C;
+}
+
+.top {
+  background-color: #B0E8BD;
+}

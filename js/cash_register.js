@@ -16,8 +16,8 @@ var register = {
 
   withdrawCash: function() {
     if (parseFloat(display.innerHTML) > this.balance) {
-      display.innerHTML = "ERROR: INSUFFICIENT FUNDS";
-      console.log("You is broke.");
+      display.innerHTML = "ERROR: INSUFFICIENT RUPEES";
+      console.log("You is broke. Go cut some grass!");
     } else {
       this.balance -= parseFloat(display.innerHTML);
       display.innerHTML = "";
@@ -99,7 +99,7 @@ var press = {
     display.innerHTML = '';
     calculator.total = null;
     calculator.lastOperator = [];
-    document.getElementById("opAlert").innerHTML = "Calculating with chained operations.";
+    document.getElementById("opAlert").innerHTML = "Calculating with <b>chained</b> operations.";
     // import chainoperations.js module
 
 
@@ -109,7 +109,7 @@ var press = {
     display.innerHTML = '';
     calculator.total = null;
     calculator.lastOperator = [];
-    document.getElementById("opAlert").innerHTML = "Calculating with ordered operations.";
+    document.getElementById("opAlert").innerHTML = "Calculating with <b>ordered</b> operations.";
     // import orderedoperations.js module
 
 
