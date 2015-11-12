@@ -6,7 +6,7 @@ var calculatorModule = (function () {
   
   
       clear: function (){
-        this.total = 0;
+        total = 0;
         return total;
       },
 
@@ -17,17 +17,17 @@ var calculatorModule = (function () {
       },
 
       subtract: function (num){
-        this.total -= num;
+        total -= num;
         return total;
       },
 
       divide: function (num){
-        this.total /= num;
+        total /= num;
         return total;
       },
 
       multiply: function (num){
-        this.total *= num;
+        total *= num;
         return total;
       },
 

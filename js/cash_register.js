@@ -8,10 +8,11 @@ window.register = (function () {
 	var op = null;
 	var balance = 0;
 	var display = document.getElementById("displayBox");
+	
+
 	document.getElementById("b7").addEventListener('click', function(){
-		
 		concatDisplayNumbers(7);
-		add(7);
+		
 	});
 	document.getElementById("b8").addEventListener('click', function(){
 		validateInput();
@@ -51,24 +52,37 @@ window.register = (function () {
 	document.getElementById("depositCash").addEventListener('click', function(){
 		
 	});
-	document.getElementById("b+").addEventListener('click', function(){
+	
+	//addition
+	document.getElementById("plus").addEventListener('click', function(){
 		var displayVal = validateInput(display.innerHTML);
 		calc.add(displayVal);
-		//op = "add";
+		op = "add";
 		display.innerHTML = "";
+	});
+
+	//subtraction
+	document.getElementById("minus").addEventListener('click', function(){
+		var displayVal = validateInput(display.innerHTML);
+		calc.subtract(displayVal);
+		op = "subtract";
+		display.innerHTML = "";
+
+	});
+
+	document.getElementById("b=").addEventListener('click', function(){
+		var displayVal = validateInput(display.innerHTML);
+		if (op == "add") {
+		calc.add(displayVal);
+		}
+		display.innerHTML = calc.equals();
+		calc.clear();
+
+
+	});
 
 	document.getElementById("clear").addEventListener('click', function(){
 		clearFunc();
-		
-	});
-
-		
-		
-
-	});
-	document.getElementById("b=").addEventListener('click', function(){
-		display.innerHTML = calc.equals();
-
 	});
 
 
@@ -85,12 +99,12 @@ function concatDisplayNumbers (number) {
 
 
 function clearFunc () {
-	display.innerHTML = " ";
+	console.log("clearrrr");
+	display.innerHTML = "";
 }
 
 
 function validateInput (numberString) {
-	console.log(typeof display.innerHTML);
 	var number = parseFloat(numberString);
 	if (isNaN(number)) {
 		return 0;
