@@ -58,11 +58,11 @@
     operate: function() {
       if (states.regMode === "ordered") {
         states.numArr.push(parseFloat(this.display.innerHTML));
-
+        // much unfinished
       }
       if (states.regMode === "chained") {
         if (this.opCheck()) {
-          states.numArr[0] = calculateFunction(states.numArr[0], parseFloat(this.display.innerHTML));
+          states.numArr[0] = calculateFunction(states.numArr[0], parseFloat(this.display.innerHTML)); // need to keep track of which button was pressed to trigger whatever calculator function
           this.display.innerHTML = states.numArr[0];
         } else {
           this.opCheck();
