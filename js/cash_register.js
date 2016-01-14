@@ -46,13 +46,14 @@ window.register = (function () {
 			});
 			document.getElementById('btn00').addEventListener("click", function(){
 				display.innerHTML += '00';
-			});
+				});
 			document.getElementById('desml').addEventListener("click", function(){
 				display.innerHTML += '.';
 			});
 			document.getElementById('add').addEventListener("click", function(){
 				console.log(display.innerHTML);
-				var value = operations.add(display.innerHTML);
+				var x = display.innerHTML;
+				var value = operations.add(x);
 				console.log(value);
 				});
 			document.getElementById('wdcash').addEventListener("click", function(){
@@ -82,16 +83,12 @@ window.register = (function () {
 			});
 
 	function concatenateNumbers (number){
-  if(display.innerHTML.trim() !== ""){
-    var currentValue = parseFloat(display.innerHTML.trim());
-    display.innerHTML = parseFloat(number) + parseFloat(currentValue);
-  }else {
-    console.log ("Empty");
-    display.innerHTML = number;
-  }
-var str = "   ";
-console.log(str.trim());
-
+		if(display.innerHTML != " "){
+				display.innerHTML += number;
+		}else {
+			console.log ("Empty");
+			display.innerHTML = number;
+		}
 	}
 	function cashRegistorModule (){
 		var cashreg;
@@ -112,8 +109,8 @@ console.log(str.trim());
 		    return operations.equals;
 		  }
 		};
+		return cashRegistor1;
 	}
-	
 	})();
 	
 console.log('test');
