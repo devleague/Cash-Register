@@ -1,3 +1,5 @@
+console.log("calculator works");
+
 function calculatorModule(){
   
   var calculator = { };

@@ -1,3 +1,5 @@
+console.log("cashregister works!");
+
 function cashReg(){
   var _balance = 0; //amount in memory 
   var _total = 0; //inputted from number buttons
@@ -28,3 +30,10 @@ var register = cashReg();
 console.log(register.balance());
 console.log(register.withdraw());
 console.log(register.deposit());
+
+// CALC BUTTON VALUES
+
+var display = document.getElementById('display');
+display.innerHTML = "some text";
+
+// console.log(display);some
