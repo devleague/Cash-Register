@@ -1,3 +1,5 @@
+
+
 function cashReg(){
   var _balance = 0; //amount in memory 
   var _total = 0; //inputted from number buttons
@@ -19,12 +21,13 @@ function cashReg(){
     return _balance;
   }
  return {
-  balance : _balance,
-  withdraw: _withdraw,
-  deposit: _deposit,
+  balance : balance,
+  withdraw: withdraw,
+  deposit: deposit,
  };
 }
 var register = cashReg();
-console.log(register.balance());
-console.log(register.withdraw());
-console.log(register.deposit());
+
+console.log(register.balance(3));
+console.log(register.withdraw(3));
+console.log(register.deposit(3));
