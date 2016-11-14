@@ -55,9 +55,10 @@ var clearButton = document.getElementById("clearButton");
 one.addEventListener("click", function() {
   display.innerHTML = "1";
 });
+//it would be like taking the first thing you press (say 1), then concatenating the result of the 2nd you click (say 2), to 1, to get 12 and so on
 
 two.addEventListener("click", function() {
-  display.innerHTML = "2";
+  display.innerHTML = display.innerHTML.concat("2");
 });
 
 three.addEventListener("click", function() {
