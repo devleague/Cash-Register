@@ -1,3 +1,4 @@
+
 function cashReg(){
   var _balance = 0; //amount in memory 
   var _total = 0; //inputted from number buttons
@@ -66,55 +67,56 @@ var clearButton = document.getElementById("clearButton");
 
 // CALCULATOR EVENT LISTENERS
 one.addEventListener("click", function() {
-  display.innerHTML = "1";
+  display.innerHTML = display.innerHTML.concat("1");
 });
+//it would be like taking the first thing you press (say 1), then concatenating the result of the 2nd you click (say 2), to 1, to get 12 and so on
 
 two.addEventListener("click", function() {
-  display.innerHTML = "2";
+  display.innerHTML = display.innerHTML.concat("2");
 });
 
 three.addEventListener("click", function() {
-  display.innerHTML = "3";
+  display.innerHTML = display.innerHTML.concat("3");
 });
 
 four.addEventListener("click", function() {
-  display.innerHTML = "4";
+  display.innerHTML = display.innerHTML.concat("4");
 });
 
 five.addEventListener("click", function() {
-  display.innerHTML = "5";
+  display.innerHTML = display.innerHTML.concat("5");
 });
 
 six.addEventListener("click", function() {
-  display.innerHTML = "6";
+  display.innerHTML = display.innerHTML.concat("6");
 });
 
 seven.addEventListener("click", function() {
-  display.innerHTML = "7";
+  display.innerHTML = display.innerHTML.concat("7");
 });
 
 eight.addEventListener("click", function() { 
-  display.innerHTML = "8";
+  display.innerHTML = display.innerHTML.concat("8");
 });
 
 nine.addEventListener("click", function() {
-  display.innerHTML = "9";
+  display.innerHTML = display.innerHTML.concat("9");
 });
 
 zero.addEventListener("click", function() {
-  display.innerHTML = "0";
+  display.innerHTML = display.innerHTML.concat("0");
 });
 
 doubleZero.addEventListener("click", function() {
-  display.innerHTML = "00";
+  display.innerHTML = display.innerHTML.concat("00");
 });
 
 decimal.addEventListener("click", function() {
-  display.innerHTML = ".";
+  display.innerHTML = display.innerHTML.concat(".");
 });
 
 clearButton.addEventListener("click", function() {
-  display.innerHTML = "0";
+  display.innerHTML = " ";
 });
 
 // function myFunction(button) {
