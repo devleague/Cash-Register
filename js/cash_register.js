@@ -1,8 +1,14 @@
-balance = 0;
-var display = document.getElementById("display");
-var displayVal = Number(display.innerHTML);
+var balance = 0;
+var display = getEm("display");
 var operation = null;
 var calculator = Calculator();
+var displayVal = Number(display.innerHTML);
+var storedNumber = 0;
+
+//'getEm()' hoisted above var display
+function getEm(x){
+  return document.getElementById(x);
+}
 
 var cRegister = (function runRegister(){
 
@@ -18,12 +24,11 @@ var cRegister = (function runRegister(){
     balance = calculator.subtract(num);
   }
   function clearDisplay(){
-    // if(operation !== null || displayVal === 'number'){
+     // if(operation !== null || displayVal === 'number'){
       display.innerHTML = "";
   }
-  function equals(){
-    return balance;
-  }
+
+
   return {
     deposit: deposit,
     withdraw: withdraw,
@@ -33,74 +38,100 @@ var cRegister = (function runRegister(){
   };
 })();
 
-document.getElementById("9").addEventListener('click',function(){
-  // cRegister.clearDisplay();
-  document.getElementById("display").innerHTML += 9;});
 
-document.getElementById("8").addEventListener('click',function(){
+getEm("nine").addEventListener('click',function(){
+  // cRegister.clearDisplay();
+  getEm("display").innerHTML += 9;});
+
+getEm("eight").addEventListener('click',function(){
   display.innerHTML += 8;});
 
-document.getElementById("7").addEventListener('click',function(){
+getEm("seven").addEventListener('click',function(){
   display.innerHTML += 7;});
 
-document.getElementById("6").addEventListener('click',function(){
+getEm("six").addEventListener('click',function(){
   display.innerHTML += 6;});
 
-document.getElementById("5").addEventListener('click',function(){
+getEm("five").addEventListener('click',function(){
   display.innerHTML += 5;});
 
-document.getElementById("4").addEventListener('click',function(){
+getEm("four").addEventListener('click',function(){
   display.innerHTML += 4;});
 
-document.getElementById("3").addEventListener('click',function(){
+getEm("three").addEventListener('click',function(){
   display.innerHTML += 3;});
 
-document.getElementById("2").addEventListener('click',function(){
+getEm("two").addEventListener('click',function(){
   display.innerHTML += 2;});
 
-document.getElementById("1").addEventListener('click',function(){
+getEm("one").addEventListener('click',function(){
   display.innerHTML += 1;});
 
-document.getElementById(".").addEventListener('click',function(){
+getEm("deci").addEventListener('click',function(){
   display.innerHTML += '.';});
 
-document.getElementById("0").addEventListener('click',function(){
-  display.innerHTML += '0';});
+getEm("zero").addEventListener('click',function(){
+  display.innerHTML += 0;});
 
-document.getElementById("00").addEventListener('click',function(){
-  display.innerHTML += '00';});
+getEm("zeroZero").addEventListener('click',function(){
+  display.innerHTML += 00;});
 
-document.getElementById("/").addEventListener('click',function(){
-  display.innerHTML += '/';});
-
-document.getElementById("*").addEventListener('click',function(){
-  display.innerHTML += '*';});
-
-document.getElementById("-").addEventListener('click',function(){
-  display.innerHTML += '-';});
-
-document.getElementById("+").addEventListener('click',function(){
-    displayVal = Number(display.innerHTML);
-    calculator.add(displayVal);
-    operation = "+";
+getEm("divide").addEventListener('click',function(){
+  calculator.divide(parseFloat(display.innerHTML));    
+    operation = "divide";
+    cRegister.clearDisplay();
   });
 
-document.getElementById("clear").addEventListener('click',function(){cRegister.clearDisplay();
+getEm("multiply").addEventListener('click',function(){
+    calculator.multiply(parseFloat(display.innerHTML));    
+    operation = "multiply";
+    cRegister.clearDisplay();
+  });
+
+getEm("minus").addEventListener('click',function(){
+  calculator.subtract(parseFloat(display.innerHTML));    
+    operation = "subtract";
+    cRegister.clearDisplay();
+  });
+
+getEm("plus").addEventListener('click',function(){
+    // displayVal = Number(display.innerHTML);
+    calculator.add(parseFloat(display.innerHTML));    
+    operation = "add";
+    cRegister.clearDisplay();
+  });
+
+getEm("clear").addEventListener('click',function(){cRegister.clearDisplay();
 });
 
-document.getElementById("balance").addEventListener('click',function(){
+getEm("balance").addEventListener('click',function(){
   display.innerHTML = 'checkin on my baby';});
 
-document.getElementById("deposit").addEventListener('click',function(){
-  display.innerHTML = 'added $krilla: ' + cRegister.deposit();});
+getEm("deposit").addEventListener('click',function(){
+  display.innerHTML = 'added $krilla: ' + cRegister.deposit();
+      });
 
-document.getElementById("withdraw").addEventListener('click',function(){
+getEm("withdraw").addEventListener('click',function(){
   display.innerHTML = 'withdrew yer $ biyatch';});
 
-document.getElementById("=").addEventListener('click',function(){
-  if (operation === "+"){
-    calculator.add(displayVal);
-    display.innerHTML = calculator.returnTotal();
-  }
-  display.innerHTML = cRegister.equals();
+
+getEm("equal").addEventListener('click',function(){
+  storedNumber = parseFloat(display.innerHTML); 
+    switch(operation){
+
+      case 'add': calculator.add(storedNumber);
+
+      case 'subtract': calculator.subtract(storedNumber);
+
+      case 'multiply': calculator.multiply(storedNumber);
+
+      case 'divide': calculator.divide(storedNumber);
+      }
+
+      return calculator.returnTotal();
+      // calculator.deleteMemory();
+
 });
+
+
+

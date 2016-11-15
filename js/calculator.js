@@ -1,37 +1,50 @@
+var total = 0;
+  var _memory = 0;
 function Calculator(){
   
-  var total = 0;
-  var memory = 0;
+  
   // function clear(x){
   //   return total = 0;
     
   // }
-
+  function load(x){
+    total = x;
+    return total;
+  }
   function add(x){
     total += x;
   }
   function subtract(x){
-    return total -= x;
+    total -= x;
   }
   function multiply(x){
-    return total *= x;
+    total *= x;
   }
   function divide(x){
-    return total /= x;
+    total /= x;
   }
-  function saveMemory(x){
-    return memory = total;
+  function deleteMemory(){
+    return _memory = 0;
   }
-  function returnTotal() {
+  function saveMemory(){
+    _memory=total;
+  }
+  function recallMemory() {
+    return _memory;
+  }
+  function returnTotal(){
     return total;
   }
 
   return{
-  clear: clear,
   add: add,
   subtract: subtract,
   multiply: multiply,
   divide: divide,
+  load: load,
+  saveMemory: saveMemory,
+  recallMemory: recallMemory,
+  deleteMemory: deleteMemory,
   returnTotal: returnTotal
   };
 }
