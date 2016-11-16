@@ -1,0 +1,243 @@
+body {
+  position: fixed;
+  background-image: url("/imgs/calculator.jpg");
+  background-repeat: no-repeat;
+}
+
+#display {
+  position: fixed;
+  height: 90px;
+  width: 355px;
+  left: 420px;
+  top: 165px;
+  border: 1px dotted red;
+  background-color: white;
+}
+
+#seven {
+  position: fixed;
+  height: 42px;
+  width: 60px;
+  left: 420px;
+  top: 320px;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+#eight {
+  position: fixed;
+  height: 42px;
+  width: 60px;
+  left: 488px;
+  top: 320px;
+  transform: skew(2deg);
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+#nine {
+  position: fixed;
+  height: 42px;
+  width: 60px;
+  left: 556px;
+  top: 320px;
+  transform: skew(3deg);
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+#four {
+  position: fixed;
+  height: 42px;
+  width: 62px;
+  left: 420px;
+  top: 368px;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+#five {
+  position: fixed;
+  height: 42px;
+  width: 62px;
+  left: 490px;
+  top: 367px;
+  transform: skew(1.5deg);
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+#six {
+  position: fixed;
+  height: 42px;
+  width: 62px;
+  left: 558px;
+  top: 367px;
+  transform: skew(3deg);
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+#one {
+  position: fixed;
+  height: 42px;
+  width: 62px;
+  left: 420px;
+  top: 415px;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+#two {
+  position: fixed;
+  height: 42px;
+  width: 62px;
+  left: 491px;
+  top: 415px;
+  transform: skew(1.5deg);
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+#three {
+  position: fixed;
+  height: 42px;
+  width: 62px;
+  left: 562px;
+  top: 414px;
+  transform: skew(3deg);
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+#zero {
+  position: fixed;
+  height: 44px;
+  width: 64px;
+  left: 420px;
+  top: 464px;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+#zeroZero {
+  position: fixed;
+  height: 44px;
+  width: 63px;
+  left: 493px;
+  top: 463px;
+  transform: skew(1deg);
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+#deci {
+  position: fixed;
+  height: 43px;
+  width: 64px;
+  left: 564px;
+  top: 462px;
+  transform: skew(3deg);
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+#divide {
+  position: fixed;
+  height: 39px;
+  width: 60px;
+  left: 645px;
+  top: 321px;
+  transform: skew(5deg);
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: #F0DD0A;
+}
+
+#multiply {
+  position: fixed;
+  height: 42px;
+  width: 61px;
+  left: 649px;
+  top: 365px;
+  transform: skew(5deg);
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: #F0DD0A;
+}
+
+#minus {
+  position: fixed;
+  height: 42px;
+  width: 62px;
+  left: 653px;
+  top: 412px;
+  transform: skew(5deg);
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: #F0DD0A;
+}
+
+#plus {
+  position: fixed;
+  height: 42px;
+  width: 65px;
+  left: 657px;
+  top: 461px;
+  transform: skew(5deg);
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: #F0DD0A;
+}
+
+#equal {
+  position: fixed;
+  height: 88px;
+  width: 61px;
+  left: 735px;
+  top: 318px;
+  transform: skew(9deg);
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: #E31E1E;
+}
+
+#clear {
+  position: fixed;
+  height: 42px;
+  width: 61px;
+  left: 745px;
+  top: 412px;
+  transform: skew(9deg);
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: #E31E1E;
+}
+
+h1 {
+  position: fixed;
+  height: 80px;
+  width: 500px;
+  left: 220px;
+  top: 20px;
+  border: 1px dotted red;
+  background-color: white;
+}
