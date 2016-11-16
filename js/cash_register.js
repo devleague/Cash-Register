@@ -13,8 +13,8 @@ function getEm(x){
 
 function clearDisplay(){
 
-     return display.innerHTML = "";
-  }
+  return display.innerHTML = "";
+}
 
 
 //   return {
@@ -29,44 +29,47 @@ function clearDisplay(){
 // for (var i = 0; i < this.length; i++) {
 // < this[i]
 // }
-getEm("nine").addEventListener('click',function(){
+
+getEm("nine").addEventListener('click',function nine(){
   display.innerHTML += 9;});
 
-getEm("eight").addEventListener('click',function(){
+getEm("eight").addEventListener('click',function eight(){
   display.innerHTML += 8;});
 
-getEm("seven").addEventListener('click',function(){
+getEm("seven").addEventListener('click',function seven(){
   display.innerHTML += 7;});
 
-getEm("six").addEventListener('click',function(){
+getEm("six").addEventListener('click',function six(){
   display.innerHTML += 6;});
 
-getEm("five").addEventListener('click',function(){
+getEm("five").addEventListener('click',function five(){
   display.innerHTML += 5;});
 
-getEm("four").addEventListener('click',function(){
+getEm("four").addEventListener('click',function four(){
   display.innerHTML += 4;});
 
-getEm("three").addEventListener('click',function(){
+getEm("three").addEventListener('click',function three(){
   display.innerHTML += 3;});
 
-getEm("two").addEventListener('click',function(){
+getEm("two").addEventListener('click',function two(){
   display.innerHTML += 2;});
 
-getEm("one").addEventListener('click',function(){
+getEm("one").addEventListener('click',function one(){
   display.innerHTML += 1;});
 
-getEm("deci").addEventListener('click',function(){
+getEm("deci").addEventListener('click',function decimal(){
   display.innerHTML += '.';});
 
-getEm("zero").addEventListener('click',function(){
+getEm("zero").addEventListener('click',function zero(){
   display.innerHTML += 0;});
 
-getEm("zeroZero").addEventListener('click',function(){
+getEm("zeroZero").addEventListener('click',function zeroZero(){
 
     display.innerHTML += '00';
 
   });
+
+
 
 getEm("clear").addEventListener('click',function(){
     clearDisplay();
@@ -74,35 +77,35 @@ getEm("clear").addEventListener('click',function(){
 
 // CALCULATOR OPERATIONS:
 
-getEm("divide").addEventListener('click',function(){
-    var divide = parseFloat(display.innerHTML);
-    calculator.load(divide);    
-    clearDisplay();
-    operation = "divide"; 
+getEm("divide").addEventListener('click',function divide(){
+  var divide = parseFloat(display.innerHTML);
+  calculator.load(divide);    
+  clearDisplay();
+  operation = "divide"; 
 
   });
 
-getEm("multiply").addEventListener('click',function(){
-    var multiply = parseFloat(display.innerHTML);
-    calculator.load(multiply);    
-    clearDisplay();
-    operation = "multiply";  
+getEm("multiply").addEventListener('click',function multiply(){
+  var multiply = parseFloat(display.innerHTML);
+  calculator.load(multiply);    
+  clearDisplay();
+  operation = "multiply";  
 
   });
 
-getEm("minus").addEventListener('click',function(){
-    var subtract = parseFloat(display.innerHTML);
-    calculator.load(subtract);    
-    clearDisplay();
-    operation = "subtract";
+getEm("minus").addEventListener('click',function subtract(){
+  var subtract = parseFloat(display.innerHTML);
+  calculator.load(subtract);    
+  clearDisplay();
+  operation = "subtract";
 
   });
 
-getEm("plus").addEventListener('click',function(){
-    var add = parseFloat(display.innerHTML);
-    calculator.load(add);    
-    clearDisplay();
-    operation = "add";
+getEm("plus").addEventListener('click',function add(){
+  var add = parseFloat(display.innerHTML);
+  calculator.load(add);    
+  clearDisplay();
+  operation = "add";
 
   });
 
@@ -110,32 +113,35 @@ getEm("plus").addEventListener('click',function(){
 
 getEm("deposit").addEventListener('click',function(){
 
-    storedNumber = parseFloat(display.innerHTML);
-    drawer += storedNumber;
-    clearDisplay();
+  storedNumber = parseFloat(display.innerHTML);
+  drawer += storedNumber;
+  clearDisplay();
 
   });
 
 getEm("withdraw").addEventListener('click',function(){
 
-    storedNumber = parseFloat(display.innerHTML);
-    display.innerHTML = (drawer -= storedNumber);
-    clearDisplay();
+  storedNumber = parseFloat(display.innerHTML);
+  display.innerHTML = (drawer -= storedNumber);
+  clearDisplay();
   
   });
 
 getEm("balance").addEventListener('click',function(){
 
-    storedNumber = parseFloat(display.innerHTML);
-    // drawer += storedNumber;
-    display.innerHTML = drawer;
+  storedNumber = parseFloat(display.innerHTML);
+  // drawer += storedNumber;
+  display.innerHTML = drawer;
+
+  var audio = document.getElementById("audio");
+  audio.play();
 
   });
 
 
 //THE ALMIGHTY EQUALS! THE EQUALITY OF EQUALITY: GENDER/RACIAL/MATHEMATICAL YOU NAME IT.
 
-getEm("equal").addEventListener('click',function(){
+getEm("equal").addEventListener('click',function equal(){
   storedNumber = parseFloat(display.innerHTML); 
     
     switch(operation){
