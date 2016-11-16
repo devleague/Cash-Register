@@ -1,3 +1,8 @@
+@font-face {
+  font-family: digital;
+  src: url('/imgs/digital.ttf');
+}
+
 body {
   position: fixed;
   background-image: url("/imgs/calculator.jpg");
@@ -6,12 +11,18 @@ body {
 
 #display {
   position: fixed;
-  height: 90px;
-  width: 355px;
-  left: 420px;
-  top: 165px;
-  border: 1px dotted red;
-  background-color: white;
+  height: 85px;
+  width: 295px;
+  left: 455px;
+  top: 156px;
+  border-radius: 5px;
+  font-size: 50px;
+  font-family: "digital";
+  word-wrap: break-word;
+  text-shadow: 4px 4px #4D834D;
+  overflow-wrap: break-word;
+  overflow-y: hidden;
+  line-height: 40px;
 }
 
 #seven {
@@ -222,8 +233,8 @@ body {
 #clear {
   position: fixed;
   height: 42px;
-  width: 61px;
-  left: 745px;
+  width: 63px;
+  left: 744px;
   top: 412px;
   transform: skew(9deg);
   font-size: 30px;
@@ -232,12 +243,51 @@ body {
   background-color: #E31E1E;
 }
 
-h1 {
+#balance {
   position: fixed;
-  height: 80px;
+  height: 43px;
+  width: 65px;
+  left: 750px;
+  top: 460px;
+  transform: skew(9deg);
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: #39AD36;
+}
+
+#deposit{
+  position: fixed;
+  height: 90px;
+  width: 195px;
+  left: 205px;
+  top: 340px;
+  transform: skew(-2deg);
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: #39AD36;
+}
+
+#withdraw{
+  position: fixed;
+  height: 92px;
+  width: 195px;
+  left: 200px;
+  top: 431px;
+  transform: skew(-2.5deg);
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: #39AD36;
+}
+
+#fck {
+  position: fixed;
+  height: 4px;
   width: 500px;
-  left: 220px;
-  top: 20px;
-  border: 1px dotted red;
-  background-color: white;
+  left: 695px;
+  top: 545px;
+  font-size: 10px;
+  font-family: arial;
 }

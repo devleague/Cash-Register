@@ -1,47 +1,36 @@
 var balance = 0;
 var display = getEm("display");
-var operation = null;
+var operation = "";
 var calculator = Calculator();
-var displayVal = Number(display.innerHTML);
 var storedNumber = 0;
+var drawer = 0;
 
-//'getEm()' hoisted above var display
+//'getEm()' hoisted above var 'display'
 function getEm(x){
+
   return document.getElementById(x);
 }
 
-var cRegister = (function runRegister(){
+function clearDisplay(){
 
-  function getBalance(){
-    return balance;
-  }
-
-  function deposit(num){
-    balance = calculator.add(num);
-    return balance;  
-  }
-  function withdraw(num){
-    balance = calculator.subtract(num);
-  }
-  function clearDisplay(){
-     // if(operation !== null || displayVal === 'number'){
-      display.innerHTML = "";
+     return display.innerHTML = "";
   }
 
 
-  return {
-    deposit: deposit,
-    withdraw: withdraw,
-    balance: getBalance,
-    clearDisplay: clearDisplay,
-    equals: equals
-  };
-})();
+//   return {
+//     // deposit: deposit,
+//     // withdraw: withdraw,
+//     // balance: getBalance,
+//     clearDisplay: clearDisplay,
+//     equals: equals
+//   };
+// })();
 
-
+// for (var i = 0; i < this.length; i++) {
+// < this[i]
+// }
 getEm("nine").addEventListener('click',function(){
-  // cRegister.clearDisplay();
-  getEm("display").innerHTML += 9;});
+  display.innerHTML += 9;});
 
 getEm("eight").addEventListener('click',function(){
   display.innerHTML += 8;});
@@ -74,62 +63,98 @@ getEm("zero").addEventListener('click',function(){
   display.innerHTML += 0;});
 
 getEm("zeroZero").addEventListener('click',function(){
-  display.innerHTML += 00;});
+
+    display.innerHTML += '00';
+
+  });
+
+getEm("clear").addEventListener('click',function(){
+    clearDisplay();
+  });
+
+// CALCULATOR OPERATIONS:
 
 getEm("divide").addEventListener('click',function(){
-  calculator.divide(parseFloat(display.innerHTML));    
-    operation = "divide";
-    cRegister.clearDisplay();
+    var divide = parseFloat(display.innerHTML);
+    calculator.load(divide);    
+    clearDisplay();
+    operation = "divide"; 
+
   });
 
 getEm("multiply").addEventListener('click',function(){
-    calculator.multiply(parseFloat(display.innerHTML));    
-    operation = "multiply";
-    cRegister.clearDisplay();
+    var multiply = parseFloat(display.innerHTML);
+    calculator.load(multiply);    
+    clearDisplay();
+    operation = "multiply";  
+
   });
 
 getEm("minus").addEventListener('click',function(){
-  calculator.subtract(parseFloat(display.innerHTML));    
+    var subtract = parseFloat(display.innerHTML);
+    calculator.load(subtract);    
+    clearDisplay();
     operation = "subtract";
-    cRegister.clearDisplay();
+
   });
 
 getEm("plus").addEventListener('click',function(){
-    // displayVal = Number(display.innerHTML);
-    calculator.add(parseFloat(display.innerHTML));    
+    var add = parseFloat(display.innerHTML);
+    calculator.load(add);    
+    clearDisplay();
     operation = "add";
-    cRegister.clearDisplay();
+
   });
 
-getEm("clear").addEventListener('click',function(){cRegister.clearDisplay();
-});
-
-getEm("balance").addEventListener('click',function(){
-  display.innerHTML = 'checkin on my baby';});
+//CASH REGISTER BUTTONS:
 
 getEm("deposit").addEventListener('click',function(){
-  display.innerHTML = 'added $krilla: ' + cRegister.deposit();
-      });
+
+    storedNumber = parseFloat(display.innerHTML);
+    drawer += storedNumber;
+    clearDisplay();
+
+  });
 
 getEm("withdraw").addEventListener('click',function(){
-  display.innerHTML = 'withdrew yer $ biyatch';});
 
+    storedNumber = parseFloat(display.innerHTML);
+    display.innerHTML = (drawer -= storedNumber);
+    clearDisplay();
+  
+  });
+
+getEm("balance").addEventListener('click',function(){
+
+    storedNumber = parseFloat(display.innerHTML);
+    // drawer += storedNumber;
+    display.innerHTML = drawer;
+
+  });
+
+
+//THE ALMIGHTY EQUALS! THE EQUALITY OF EQUALITY: GENDER/RACIAL/MATHEMATICAL YOU NAME IT.
 
 getEm("equal").addEventListener('click',function(){
   storedNumber = parseFloat(display.innerHTML); 
+    
     switch(operation){
 
       case 'add': calculator.add(storedNumber);
+        break;
 
       case 'subtract': calculator.subtract(storedNumber);
+        break;
 
       case 'multiply': calculator.multiply(storedNumber);
+        break;
 
       case 'divide': calculator.divide(storedNumber);
+        break;
       }
 
-      return calculator.returnTotal();
-      // calculator.deleteMemory();
+    display.innerHTML = calculator.returnTotal();
+      calculator.deleteTotal();
 
 });
 

@@ -1,14 +1,12 @@
+
 var total = 0;
-  var _memory = 0;
+// var _memory = 0;
+
 function Calculator(){
+ 
   
-  
-  // function clear(x){
-  //   return total = 0;
-    
-  // }
   function load(x){
-    total = x;
+    total += x;
     return total;
   }
   function add(x){
@@ -23,17 +21,18 @@ function Calculator(){
   function divide(x){
     total /= x;
   }
-  function deleteMemory(){
-    return _memory = 0;
+  function deleteTotal(){
+     total = 0;
+
   }
-  function saveMemory(){
-    _memory=total;
-  }
-  function recallMemory() {
-    return _memory;
-  }
+  // function saveMemory(){
+  //   _memory = total;
+  // }
+  // function recallMemory() {
+  //    return _memory;
+  // }
   function returnTotal(){
-    return total;
+     return total;
   }
 
   return{
@@ -42,9 +41,9 @@ function Calculator(){
   multiply: multiply,
   divide: divide,
   load: load,
-  saveMemory: saveMemory,
-  recallMemory: recallMemory,
-  deleteMemory: deleteMemory,
+  // saveMemory: saveMemory,
+  // recallMemory: recallMemory,
+  deleteTotal: deleteTotal,
   returnTotal: returnTotal
   };
 }
