@@ -41,10 +41,10 @@ You should import `./js/calculator.js` and `./js/cash_register.js` at the bottom
 
 ## Running the app
 
-you must have `http-server` installed, if not then install it `npm i -g http-server`
+you must have `live-server` installed, if not then install it `npm i -g live-server`
 
 from your project directory run
 
 ```
-http-server
+live-server
 ```
