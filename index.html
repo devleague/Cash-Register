@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+  </head>
+
+  <body>
+    <section>
+  <!-- insert display -->
+      <div class="top" style="padding: 15px; font-size: 200%; display: inline-block"><u>Super Happy Fun Register</u>: $[</div>
+      <div class="top" id="display" style="padding: 15px; font-size: 200%; display: inline-block"></div>
+      <div class="top" style="padding: 15px; font-size: 200%; display: inline-block">]</div>
+
+      <br>
+
+      <div>
+        <p id="opAlert" style="color: blue; font-size: 125%">Calculating with <b>ordered</b> operations.</p>
+      </div>
+
+      <!-- insert 789 divide clear -->
+      <div class="row">
+        <p class="cell number" id="key7">[7]</p>
+        <p class="cell number" id="key8">[8]</p>
+        <p class="cell number" id="key9">[9]</p>
+        <p class="cell operator" id="keyDivide">[/]</p>
+        <p class="register" id="keyClear">[clear]</p>
+      </div>
+
+  <!-- insert 456 times getBalance -->
+      <div class="row">
+        <p class="cell number" id="key4">[4]</p>
+        <p class="cell number" id="key5">[5]</p>
+        <p class="cell number" id="key6">[6]</p>
+        <p class="cell operator" id="keyMultiply">[*]</p>
+        <p class="register" id="keyGetBalance">[get balance]</p>
+      </div>
+
+      <!-- insert 123 minus depositeCash -->
+      <div class="row">
+        <p class="cell number" id="key1">[1]</p>
+        <p class="cell number" id="key2">[2]</p>
+        <p class="cell number" id="key3">[3]</p>
+        <p class="cell operator" id="keySubtract">[-]</p>
+        <p class="register" id="keyDepositCash">[deposit cash]</p>
+      </div>
+
+      <!-- insert 0 00 . plus withdrawCash -->
+      <div class="row">
+        <p class="cell number" id="key0">[0]</p>
+        <p class="cell number" id="key00">[00]</p>
+        <p class="cell number" id="keyPeriod">[.]</p>
+        <p class="cell operator" id="keyAdd">[+]</p>
+        <p class="register" id="keyWithdrawCash">[withdraw cash]</p>
+      </div>
+
+      <!-- insert equals -->
+      <div class="row">
+        <p class="cell"></p>
+        <p class="cell"></p>
+        <p class="cell"></p>
+        <p class="cell" id="keyEquals">[=]</p>
+      </div>
+
+      <div style="display: inline-block">
+        <button id="chained" type="button" style="padding: 10px; font-size: 150%; font-family: arial">Chained Operations</button>
+        <button id="ordered" type="button" style="padding: 10px; font-size: 150%; font-family: arial">Ordered Operations</button>
+      </div>
+    </section>
+    <script src="./js/calculator.js"></script>
+    <script src="./js/cash_register.js"></script>
+  </body>
+</html>
