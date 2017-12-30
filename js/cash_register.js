@@ -56,6 +56,7 @@ function divide() {
 }
 
 function equals() {
+  console.log('test') 
   myCalculator.getTotal('total');
   clearDisplay = true;
   display(myCalculator.getTotal());
@@ -71,12 +72,13 @@ function clearTotal() {
 
 
 function deposit(amt) {
-  bankBalance +=amt;
+  bankBalance += amt;
   getBalance();
 }
 
 function withdraw(amt) {
-  bankBalance -=amt;
+  console.log("test")
+  bankBalance -= amt;
   getBalance();
 }
 
