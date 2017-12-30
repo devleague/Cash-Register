@@ -19,9 +19,9 @@ Create an html5 single page app that looks like a cash register with these butto
 
 `( display )` is the primary ui that prints all results  
 `[clear]` will clear the display  
-`[get balance]` will display the current balance  
-`[deposit cash]` will add the amount currently in the `( display )` to the cash register, then clears the display  
-`[withdraw cash]` will remove the amount currently in the `( display )` to the cash register, then clears the display  
+`[get balance]` will display the current balance  (Use 'Total' instead)
+`[deposit cash]` will add the amount currently in the `( display )` to the cash register, then clears the display  (Use'Checkout' instead of 'deposit cash')
+`[withdraw cash]` will remove the amount currently in the `( display )` to the cash register, then clears the display  (Use 'Return' instead)
 
 ## calculator.js
 

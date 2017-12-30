@@ -1,0 +1,11 @@
+body, div, a {
+    padding:0;
+    margin:0;
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+#cash-register {
+    background-color: #007AFF;
+    width: 610px;
+    height: 500px;
+
+}
