@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="cash_register.js" type="text/javascript"></script>
     <script src="calculator.js" type="text/javascript"></script>
@@ -11,31 +12,38 @@
 </head>
 <body>
     <div id="cash-register">
-        <div id="display"></div>
+        <div class="display" id="display">
+            <hr>
+            <div class="total_text">Total</div>
+        </div>
         <div id="numbers">
-            <a>1</a>
-            <a>2</a>
-            <a>3</a>
-            <a>4</a>
-            <a>5</a>
-            <a>6</a>
-            <a>7</a>
-            <a>8</a>
-            <a>9</a>
-            <a>0</a>
-            <a>00</a>
-            <a id ="clear">Clear</a>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>0</button>
+            <button>00</button>
+            <button>.</button>
+            
         </div>
         <div id="operators">
-            <a>+</a>
-            <a>-</a>
-            <a>.</a>
+            <button class="operator">+</button>
+            <button class="operator">-</button> 
         </div>
-        <div="functions">
-            <a id="total">Total</a>
-            <a id="checkout">Checkout</a>
-            <a id="return">Return</a>
+        <div id="functions">
+            <button class="function" id="total">Total</button>
+            <button class="function" id="checkout">Checkout</button>
+            <button class="function" id="return">Return</button>
+            <button class="function" id ="clear" type="reset">Clear</button>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
 </body>
 </html>
