@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="cash_register.js" type="text/javascript"></script>
-    <script src="calculator.js" type="text/javascript"></script>
+    
     <title>Document</title>
 </head>
 <body>
@@ -17,30 +16,35 @@
             <div id="total_value">$0.00</div>
         </div>
         <div id="numbers">
-            <button id="1">1</button>
-            <button id="2">2</button>
-            <button id="3">3</button>
-            <button id="4">4</button>
-            <button id="5">5</button>
-            <button id="6">6</button>
-            <button id="7">7</button>
-            <button id="8">8</button>
-            <button id="9">9</button>
-            <button id="0">0</button>
-            <button id="00">00</button>
-            <button id=".">.</button>
+            <button class="button" id="1">1</button>
+            <button class="button" id="2">2</button>
+            <button class="button" id="3">3</button>
+            <button class="button" id="4">4</button>
+            <button class="button" id="5">5</button>
+            <button class="button" id="6">6</button>
+            <button class="button" id="7">7</button>
+            <button class="button" id="8">8</button>
+            <button class="button" id="9">9</button>
+            <button class="button" id="0">0</button>
+            <button class="button" id=".">.</button>
+            <button class="button" id="clear" type="reset">Clear</button>
             
         </div>
         <div id="operators">
-            <button value="+" class="operator">+</button>
-            <button value="-" class="operator">-</button> 
+            <button class="operator" id="+">+</button>
+            <button class="operator" id="-">-</button>
+            <button class="operator" id="x">x</button>  
+            <button class="operator" id="/">/</button>
+           
         </div>
-        <div id="functions">
-            <button class="function" id="total">Total</button>
-            <button class="function" id="checkout">Checkout</button>
-            <button class="function" id="return">Return</button>
-            <button class="function" id ="clear" type="reset">Clear</button>
-        </div>
+        <div id="functions"> 
+            <button class="function_right" id="get_balance">Balance</button>          
+            <button class="function_left" id="total">Total</button>
+            <button class="function_left" id="withdraw_cash">Withdraw</button>
+            <button class="function_right" id="deposit_cash">Deposit</button>
+         </div>   
     </div>
+    <script src="./js/calculator.js" type="text/javascript"></script>
+    <script src="./js/cash_register.js" type="text/javascript"></script>
 </body>
 </html>

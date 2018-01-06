@@ -49,12 +49,13 @@ hr{
     color: #333;
 }
 
-.total_value{
+#total_value:before{
     position: absolute;
     font-size: 40px;
     bottom: 20px;
     right: 30px;
     color: #333;
+    content: '';
 }
 button{
     width: 150px;
@@ -73,6 +74,12 @@ button{
     background-color: red;
 }
 
+#total{
+    background-color: orange;
+}
+#equal{
+    background-color: blue;
+}
 #numbers{
     position: absolute;
     left: 316px;
@@ -80,15 +87,19 @@ button{
     display: block;
     padding: 2px;
     margin: auto;
-
 }
 
 #operators{
     display: block;
     position: absolute;
-    bottom: 50px;
+    bottom: 30px;
     left: 395px;
     margin: auto;
+}
+
+.operator{
+    position: relative;
+    height: 50px;
 }
 
 #functions{
@@ -100,8 +111,21 @@ button{
     padding: 2px;
 }
 
-.function{
+.function_left{
     display: block;
+    float: left;
     font-size: 20px;
     height: 50px;
+}
+
+.function_right{
+    display: block;
+    float: right;
+    font-size: 20px;
+    height: 50px;
+}
+
+#savedTotal{
+    position: absolute;
+    font-size: 12px;
 }
