@@ -1,0 +1,131 @@
+*{
+    box-sizing: border-box;
+}
+body, div, a {
+    padding:0;
+    margin:0;
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+#cash-register {
+    position:relative;
+    background-color: #007AFF;
+    width: 800px;
+    height: 600px;
+    border: 3px solid black;
+    margin: 0px auto;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#display{
+    position: relative;
+    display: block;
+    float: left;
+    background-color: white;
+    width: 300px;
+    height: 400px;
+    margin: auto;
+    text-align: right;
+    font-size: 60px;
+    padding: 0 5px;
+    border-radius: 10px;
+}
+
+hr{
+    display: block;
+    margin-top: 5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
+.total_text{
+    position: absolute;
+    font-size: 18px;
+    bottom: 20px;
+    left: 16px;
+    color: #333;
+}
+
+#total_value:before{
+    position: absolute;
+    font-size: 40px;
+    bottom: 20px;
+    right: 30px;
+    color: #333;
+    content: '';
+}
+button{
+    width: 150px;
+    height: 98px;
+    margin: 1px;
+    background-color: #00BAFF;
+    border-radius: 5px;
+    color: white;
+    font-size: 30px;
+    border: none;
+   
+}
+
+#clear{
+    font-size: 20px;
+    background-color: red;
+}
+
+#total{
+    background-color: orange;
+}
+#equal{
+    background-color: blue;
+}
+#numbers{
+    position: absolute;
+    left: 316px;
+    width: 500px;
+    display: block;
+    padding: 2px;
+    margin: auto;
+}
+
+#operators{
+    display: block;
+    position: absolute;
+    bottom: 30px;
+    left: 395px;
+    margin: auto;
+}
+
+.operator{
+    position: relative;
+    height: 50px;
+}
+
+#functions{
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    width: 310px;
+    height: 120px;
+    padding: 2px;
+}
+
+.function_left{
+    display: block;
+    float: left;
+    font-size: 20px;
+    height: 50px;
+}
+
+.function_right{
+    display: block;
+    float: right;
+    font-size: 20px;
+    height: 50px;
+}
+
+#savedTotal{
+    position: absolute;
+    font-size: 12px;
+}
